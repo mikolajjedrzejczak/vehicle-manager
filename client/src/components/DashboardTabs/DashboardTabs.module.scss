@@ -1,0 +1,54 @@
+@import '../../styles/variables';
+
+.tabs {
+  width: 100%;
+  margin-top: 1rem;
+
+  &__header {
+    display: flex;
+    border-bottom: 1px solid $border;
+    background-color: transparent;
+    overflow-x: auto; 
+  }
+
+  &__btn {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    border: none;
+    gap: .4rem;
+    background: none;
+    cursor: pointer;
+    color: $text-muted;
+    font-weight: 500;
+    transition: all $transition;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+
+    &:hover {
+      color: #ffff;
+      background-color: $primary;;
+    }
+
+    &_active {
+      color: $primary;
+      border-bottom-color: $primary;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+
+  &__content {
+    padding: 2rem 1rem;
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

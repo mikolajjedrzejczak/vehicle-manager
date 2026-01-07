@@ -1,0 +1,64 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.header {
+  background-color: $primary;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &__container {
+    @include container;
+    padding: 0; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__brand {
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+
+    img {
+      width: 48px;
+      display: flex;
+    
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0;
+
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  &__carBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 200px;
+  }
+
+  &__chevron {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+}

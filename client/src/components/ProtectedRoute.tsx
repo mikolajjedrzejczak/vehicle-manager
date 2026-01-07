@@ -3,7 +3,7 @@ import { useAuthStore } from '../store/auth.store';
 
 const ProtectedRoute = () => {
   const isAuth = useAuthStore((state) => state.isAuth());
-
+  
   if (isAuth) {
     return <Outlet />;
   }

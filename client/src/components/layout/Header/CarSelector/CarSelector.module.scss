@@ -1,0 +1,118 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.carSelector {
+  @include container;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 80px;
+  z-index: 50; 
+  animation: slideDown $transition;
+
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: transparent;
+    overflow: hidden; 
+    pointer-events: auto;
+  }
+
+  &__panel {
+    @include card;
+    margin-top: 0.25rem;
+    border: 1px solid $border;
+    background-color: $bg-input;
+    box-shadow: 
+      0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: $text-main;
+  }
+
+  &__addBtn {
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__item {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    border-radius: $radius;
+    border: 2px solid $border;
+    background-color: $bg-input;
+    transition: all $transition;
+    cursor: pointer;
+
+    &:hover {
+      border-color: darken($border, 10%);
+      background-color: rgba($primary, 0.02);
+    }
+    
+    &_active {
+      border-color: $primary;
+      background-color: rgba($primary, 0.05);
+
+      &:hover {
+        border-color: $primary;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__carName {
+    font-weight: 600;
+    color: $text-main;
+    font-size: 1rem;
+  }
+
+  &__details {
+    color: $text-muted;
+    font-size: 0.875rem;
+    margin-top: 0.125rem;
+  }
+
+  &__mileage {
+    color: $text-muted;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    opacity: 0.8;
+  }
+
+  &__badge {
+    background-color: $primary;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
