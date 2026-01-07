@@ -1,0 +1,53 @@
+@import '../../../styles/variables';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__sectionTitle {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $text-main;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid $border;
+
+    @media (max-width: 480px) {
+      flex-direction: column-reverse;
+      gap: 1rem;
+      
+      & > div { width: 100%; }
+    }
+  }
+
+  &__rightActions {
+    display: flex;
+    gap: 1rem;
+    
+    @media (max-width: 480px) {
+      flex-direction: column-reverse;
+      button { width: 100%; }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "email": "admin@example.com",
+      "password": "$2a$10$zZHoFo3YQ7zsuBVq082Xb.iQMoznASbOpe2RtLZ.Nrn/3.tjsCofu",
+      "id": 1
+    }
+  ],
+  "cars": [
+    {
+      "brand": "BWM",
+      "model": "320d",
+      "registrationNumber": "PO 1234",
+      "year": 2014,
+      "mileage": 40000,
+      "vin": "12319283128390912",
+      "services": {
+        "oilChange": {
+          "status": "ok",
+          "endDate": "",
+          "nextMileage": 0
+        },
+        "inspection": {
+          "status": "ok",
+          "endDate": "2026-02-21",
+          "nextMileage": 0
+        },
+        "insurance": {
+          "status": "ok",
+          "endDate": "2026-02-20",
+          "nextMileage": 0
+        },
+        "warranty": {
+          "status": "ok",
+          "endDate": "2026-03-14",
+          "nextMileage": 0
+        }
+      },
+      "userId": "1",
+      "id": 1
+    },
+    {
+      "brand": "Toyota",
+      "model": "Yaris",
+      "registrationNumber": "PY 4356",
+      "year": 2022,
+      "mileage": 3132400,
+      "vin": "12345678901234567",
+      "services": {
+        "oilChange": {
+          "status": "ok",
+          "endDate": "",
+          "nextMileage": 0
+        },
+        "inspection": {
+          "status": "ok",
+          "endDate": "2026-02-12",
+          "nextMileage": 0
+        },
+        "insurance": {
+          "status": "ok",
+          "endDate": "2026-02-20",
+          "nextMileage": 0
+        },
+        "warranty": {
+          "status": "ok",
+          "endDate": "2026-03-06",
+          "nextMileage": 0
+        }
+      },
+      "userId": 1,
+      "id": 2
+    }
+  ],
+  "fuelings": [
+    {
+      "date": "2026-01-05",
+      "mileage": 343242,
+      "liters": 45,
+      "cost": 242,
+      "carId": 1,
+      "createdAt": "2026-01-05T18:54:43.979Z",
+      "id": 1
+    },
+    {
+      "date": "2026-01-05",
+      "mileage": 213500,
+      "liters": 30,
+      "cost": 160,
+      "carId": 3,
+      "createdAt": "2026-01-05T22:17:56.453Z",
+      "id": 2
+    },
+    {
+      "date": "2026-01-07",
+      "mileage": 3132400,
+      "liters": 43,
+      "cost": 240,
+      "carId": 2,
+      "createdAt": "2026-01-07T17:19:45.176Z",
+      "id": 3
+    }
+  ]
+}

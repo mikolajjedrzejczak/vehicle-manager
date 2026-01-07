@@ -7,6 +7,11 @@ import {
   registerRequest,
 } from '../services/auth.service';
 import { AxiosError } from 'axios';
+import {
+  validateLogin,
+  validateRegister,
+  type ValidationErrors,
+} from '../utils/validators';
 
 export const useAuth = () => {
   const navigate = useNavigate();
@@ -16,13 +21,21 @@ export const useAuth = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [errors, setErrors] = useState<ValidationErrors>({});
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const validationErrors = validateLogin({ email, password });
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
     setIsLoading(true);
-    setError(null);
+    setErrors({});
 
     try {
       const response = await loginRequest({ email, password });
@@ -34,9 +47,9 @@ export const useAuth = () => {
     } catch (err: unknown) {
       console.error(err);
       if (err instanceof AxiosError) {
-        const errorMessage =
-          err.response?.data?.message || 'Niepoprawny email lub hasło';
-        setError(errorMessage);
+        setErrors({
+          email: err.response?.data?.message || 'Niepoprawny email lub hasło',
+        });
       }
     } finally {
       setIsLoading(false);
@@ -45,30 +58,48 @@ export const useAuth = () => {
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const validationErrors = validateRegister({
+      email,
+      password,
+      confirmPassword,
+    });
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
     setIsLoading(true);
-    setError(null);
+    setErrors({});
+
+    let success = false;
 
     try {
       await registerRequest({ email, password });
 
-      navigate('/login');
+      setConfirmPassword('');
+      success = true;
     } catch (err: unknown) {
       console.error(err);
       if (err instanceof AxiosError) {
-        const errorMessage =
-          err.response?.data?.message || 'Niepoprawny email lub hasło';
-        setError(errorMessage);
+        setErrors({
+          email:
+            err.response?.data?.message || 'Konto z tym adresem już istnieje',
+        });
+        success = false;
       }
     } finally {
       setIsLoading(false);
     }
+
+    return success;
   };
 
   const handleLogout = async () => {
     try {
       await logoutRequest();
     } catch (err) {
-      console.error('Błąd podczas wylogowywania (serwer):', error);
+      console.error('Błąd podczas wylogowywania (serwer):', err);
     } finally {
       zustandLogout();
       navigate('/login');
@@ -80,8 +111,11 @@ export const useAuth = () => {
     setEmail,
     password,
     setPassword,
+    confirmPassword,
+    setConfirmPassword,
     isLoading,
-    error,
+    errors,
+    setErrors,
     handleLogin,
     handleRegister,
     handleLogout,

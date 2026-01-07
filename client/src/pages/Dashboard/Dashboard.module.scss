@@ -1,0 +1,82 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.dashboard {
+  &__container {
+    @include container;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    flex: 1;
+  }
+
+  &__empty {
+    @include card;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    text-align: center;
+    gap: 1.5rem;
+    border: 2px dashed $border;
+    background-color: transparent;
+
+    p {
+      color: $text-muted;
+      font-size: 1.125rem;
+      max-width: 400px;
+    }
+
+    &Icon {
+      color: $border;
+    }
+  }
+
+  &__addBtn {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+
+  &__content {
+    animation: fadeIn $transition;
+  }
+
+  .loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    gap: 1.5rem;
+    color: $primary;
+    font-weight: 500;
+
+    &::after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba($primary, 0.1);
+      border-top-color: $primary;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+  }
+
+  .error {
+    @include card;
+    margin-top: 2rem;
+    border-left: 4px solid $danger;
+    color: $danger;
+    padding: 1.5rem;
+    background-color: rgba($danger, 0.05);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

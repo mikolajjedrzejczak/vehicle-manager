@@ -1,0 +1,56 @@
+@import '../../styles/variables';
+
+.auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  padding: 1rem;
+
+  &__card {
+    width: 100%;
+    max-width: 400px;
+    background-color: $bg-input;
+    padding: 2rem;
+    border-radius: $radius; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: $text-main;
+  }
+
+  &__subtitle {
+    text-align: center;
+    color: $text-muted;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  &__text {
+    color: $text-muted;
+  }
+
+  &__toggle {
+    width:fit-content;
+    height: fit-content;
+    padding: 5px!important;
+  }
+}

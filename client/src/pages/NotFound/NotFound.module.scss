@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.content {
+  max-width: 450px;
+}
+
+.iconWrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: $primary;
+
+  .errorCode {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    background: $danger;
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $text-main;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: $text-muted;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
