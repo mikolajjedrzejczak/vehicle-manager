@@ -17,7 +17,7 @@ export const validateLogin = (data: LoginBody) => {
 
   if (!data.email.trim()) {
     errors.email = 'Email jest wymagany!';
-  }else if (!emailRegex.test(data.email)) {
+  } else if (!emailRegex.test(data.email)) {
     errors.email = 'Niepoprawny format adresu email!';
   }
 
@@ -47,8 +47,20 @@ export const validateCar = (data: Omit<Car, 'id'>) => {
 
   if (!data.brand?.trim()) errors.brand = 'Marka jest wymagana!';
   if (!data.model?.trim()) errors.model = 'Model jest wymagany!';
-  if (!data.registrationNumber?.trim())
+
+  const backendRegex = /^[A-Z]{2,3}\s?[A-Z0-9]{4,5}$/i;
+
+  if (!data.registrationNumber?.trim()) {
     errors.registrationNumber = 'Nr rejestracyjny jest wymagany!';
+  } else if (
+    data.registrationNumber.trim().length < 4 ||
+    data.registrationNumber.trim().length > 9
+  ) {
+    errors.registrationNumber =
+      'Numer rejestracyjny musi mieć od 4 do 9 znaków';
+  } else if (!backendRegex.test(data.registrationNumber.trim())) {
+    errors.registrationNumber = 'Niepoprawny format (np. PO 12345 lub WN1234A)';
+  }
 
   const currentYear = new Date().getFullYear();
   const yearNum = Number(data.year);
@@ -57,15 +69,14 @@ export const validateCar = (data: Omit<Car, 'id'>) => {
     errors.year = `Rok musi być między 1970 a ${currentYear + 1}!`;
   }
 
-  const mileageValue = data.mileage.toString().trim();
-  const mileageNum = Number(mileageValue);
-
-  if (mileageValue === '' || isNaN(mileageNum)) {
+  if (
+    data.mileage === undefined ||
+    data.mileage === null ||
+    String(data.mileage).trim() === ''
+  ) {
     errors.mileage = 'Przebieg jest wymagany!';
-  }
-
-  if (mileageNum < 0) {
-    errors.mileage = 'Przebieg nie może być ujemny!';
+  } else if (isNaN(Number(data.mileage)) || Number(data.mileage) < 0) {
+    errors.mileage = 'Podaj poprawny przebieg!';
   }
 
   if (data.vin && data.vin.length !== 17) {
@@ -83,15 +94,16 @@ export const validateFueling = (
 
   if (!data.date) errors.date = 'Data jest wymagana!';
 
-  const mileageStr = data.mileage?.toString().trim();
-  const mileageNum = Number(data.mileage);
-
-  if (!mileageStr || mileageStr === '') {
-    errors.mileage = 'Wpisz przebieg!';
-  } else if (mileageNum < 0) {
-    errors.mileage = 'Przebieg nie może być ujemny!';
-  } else if (mileageNum < lastCarMileage) {
-    errors.mileage = `Przebieg nie może być mniejszy niż ostatni (${lastCarMileage} km)!`;
+  if (
+    data.mileage === undefined ||
+    data.mileage === null ||
+    String(data.mileage).trim() === ''
+  ) {
+    errors.mileage = 'Przebieg jest wymagany!';
+  } else if (isNaN(Number(data.mileage)) || Number(data.mileage) < 0) {
+    errors.mileage = 'Podaj poprawny przebieg!';
+  } else if (data.mileage < lastCarMileage) {
+    errors.mileage = `Przebieg nie może być mniejszy niż ostatni (${lastCarMileage.toLocaleString()} km)!`;
   }
 
   if (!data.liters || Number(data.liters) <= 0)

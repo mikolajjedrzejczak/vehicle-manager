@@ -42,50 +42,55 @@ export const useFuelForm = (
     return isNaN(price) || !isFinite(price) ? null : price.toFixed(2);
   }, [formData.liters, formData.cost]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
 
-    const validationData = {
-      date: formData.date,
-      mileage: formData.mileage,
-      liters: formData.liters,
-      cost: formData.cost,
-    };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    const lastMileage = Number(currentCar?.mileage) || 0;
-
-    const validationErrors = validateFueling(
-      validationData as any,
-      lastMileage
-    );
-
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    const payload = {
-      date: formData.date,
-      mileage: Number(formData.mileage),
-      liters: Number(formData.liters),
-      cost: Number(formData.cost),
-    };
-
-    setIsSubmitting(true);
-
-    try {
-      if (initialData) {
-        await updateFueling(initialData.id, payload);
-      } else {
-        await addFueling(payload);
-      }
-      onSuccess();
-    } catch (err) {
-      console.error('Błąd formularza tankowania:', err);
-    } finally {
-      setIsSubmitting(false);
-    }
+  const validationData = {
+    date: formData.date,
+    mileage: formData.mileage,
+    liters: formData.liters,
+    cost: formData.cost,
   };
+  
+  const lastMileageForValidation = initialData 
+    ? 0 
+    : (Number(currentCar?.mileage) || 0);
+
+  const validationErrors = validateFueling(
+    validationData as any,
+    lastMileageForValidation
+  );
+
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    return;
+  }
+
+  const payload = {
+    carId: Number(currentCar?.id),
+    date: formData.date,
+    mileage: Number(formData.mileage),
+    liters: Number(formData.liters),
+    cost: Number(formData.cost),
+  };
+
+  setIsSubmitting(true);
+
+  try {
+    if (initialData) {
+      await updateFueling(initialData.id, payload);
+    } else {
+      await addFueling(payload);
+    }
+    
+    onSuccess();
+  } catch (err) {
+    console.error('Błąd formularza tankowania:', err);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return {
     formData,

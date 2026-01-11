@@ -1,28 +1,28 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { User } from '../types/auth.types';
 
 interface AuthState {
   token: string | null;
-  user: User | null;
+  userId: string | null;
+  role: string | null;
   isAuth: () => boolean;
-  login: (token: string, user: User) => void;
+  setAuth: (token: string, userId: string, role: string) => void;
   logout: () => void;
-  setToken: (token: string) => void;
 }
 
 export const useAuthStore = create<AuthState>()(
   persist(
     (set, get) => ({
       token: null,
-      user: null,
+      userId: null,
+      role: null,
       isAuth: () => !!get().token,
-      login: (token, user) => set({ token, user }),
-      logout: () => set({ token: null, user: null }),
-      setToken: (token) => set({ token }),
+      setAuth: (token, userId, role) => set({ token, userId, role }),
+      logout: () => set({ token: null, userId: null, role: null }),
     }),
     {
       name: 'auth-storage',
     }
   )
 );
+

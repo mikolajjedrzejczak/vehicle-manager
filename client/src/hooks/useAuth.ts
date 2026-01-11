@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/auth.store';
 import { useState } from 'react';
 import {
+  getMeRequest,
   loginRequest,
-  logoutRequest,
   registerRequest,
 } from '../services/auth.service';
 import { AxiosError } from 'axios';
@@ -16,7 +16,7 @@ import {
 export const useAuth = () => {
   const navigate = useNavigate();
 
-  const zustandLogin = useAuthStore((state) => state.login);
+  const zustandLogin = useAuthStore((state) => state.setAuth);
   const zustandLogout = useAuthStore((state) => state.logout);
 
   const [email, setEmail] = useState('');
@@ -39,9 +39,17 @@ export const useAuth = () => {
 
     try {
       const response = await loginRequest({ email, password });
-      const { accessToken, user } = response.data;
 
-      zustandLogin(accessToken, user);
+      const { accessToken } = response.data;
+
+      zustandLogin(accessToken, '', '');
+
+      const userResponse = await getMeRequest();
+      const { id, role } = userResponse.data;
+
+      console.log(id)
+
+      zustandLogin(accessToken, id, role);
 
       navigate('/');
     } catch (err: unknown) {
@@ -96,14 +104,8 @@ export const useAuth = () => {
   };
 
   const handleLogout = async () => {
-    try {
-      await logoutRequest();
-    } catch (err) {
-      console.error('Błąd podczas wylogowywania (serwer):', err);
-    } finally {
-      zustandLogout();
-      navigate('/login');
-    }
+    zustandLogout();
+    navigate('/login');
   };
 
   return {

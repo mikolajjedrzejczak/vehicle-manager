@@ -14,7 +14,9 @@ export const useCarForm = (
   const [errors, setErrors] = useState<ValidationErrors>({});
 
   const { addCarToState } = useGarageStore();
-  const user = useAuthStore((state) => state.user);
+
+  const token = useAuthStore((state) => state.token);
+  const userId = useAuthStore((state) => state.userId);
 
   const [formData, setFormData] = useState({
     brand: '',
@@ -28,6 +30,11 @@ export const useCarForm = (
     warrantyDate: '',
   });
 
+  const formatDateForInput = (date: string | null | undefined) => {
+    if (!date) return '';
+    return date.split('T')[0];
+  };
+
   useEffect(() => {
     if (initialData) {
       setFormData({
@@ -37,9 +44,15 @@ export const useCarForm = (
         year: initialData.year || new Date().getFullYear(),
         mileage: initialData.mileage?.toString() || '',
         vin: initialData.vin || '',
-        inspectionDate: initialData.services?.inspection?.endDate || '',
-        insuranceDate: initialData.services?.insurance?.endDate || '',
-        warrantyDate: initialData.services?.warranty?.endDate || '',
+        inspectionDate: formatDateForInput(
+          initialData.services?.inspection?.endDate
+        ),
+        insuranceDate: formatDateForInput(
+          initialData.services?.insurance?.endDate
+        ),
+        warrantyDate: formatDateForInput(
+          initialData.services?.warranty?.endDate
+        ),
       });
     }
   }, [initialData]);
@@ -65,43 +78,42 @@ export const useCarForm = (
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const formatDate = (date: string) => (date === '' ? null : date);
+
+    const mileageValue =
+      formData.mileage.trim() === '' ? undefined : Number(formData.mileage);
+
     const carPayload: Omit<Car, 'id'> = {
+      userId: userId as string,
       brand: formData.brand,
       model: formData.model,
       registrationNumber: formData.registrationNumber,
       year: Number(formData.year),
-      mileage: formData.mileage === '' ? ('' as any) : Number(formData.mileage),
+      mileage: mileageValue as any,
       vin: formData.vin,
       services: {
-        oilChange: initialData?.services?.oilChange || {
-          status: '',
-          endDate: '',
-          nextMileage: 0,
+        oilChange: {
+          status: initialData?.services?.oilChange?.status,
+          nextMileage: initialData?.services?.oilChange?.nextMileage || 0,
+          endDate: formatDate(initialData?.services?.oilChange?.endDate || ''),
         },
         inspection: {
-          ...(initialData?.services?.inspection || {
-            status: '',
-            nextMileage: 0,
-          }),
-          endDate: formData.inspectionDate,
+          status: initialData?.services?.inspection?.status,
+          nextMileage: initialData?.services?.inspection?.nextMileage || 0,
+          endDate: formatDate(formData.inspectionDate),
         },
         insurance: {
-          ...(initialData?.services?.insurance || {
-            status: '',
-            nextMileage: 0,
-          }),
-          endDate: formData.insuranceDate,
+          status: initialData?.services?.insurance?.status,
+          nextMileage: initialData?.services?.insurance?.nextMileage || 0,
+          endDate: formatDate(formData.insuranceDate),
         },
         warranty: {
-          ...(initialData?.services?.warranty || {
-            status: '',
-            nextMileage: 0,
-          }),
-          endDate: formData.warrantyDate,
+          status: initialData?.services?.warranty?.status,
+          nextMileage: initialData?.services?.warranty?.nextMileage || 0,
+          endDate: formatDate(formData.warrantyDate),
         },
       },
     };
-
     const validationErrors = validateCar(carPayload);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -113,8 +125,8 @@ export const useCarForm = (
       if (initialData) {
         await updateCar(initialData.id, carPayload);
       } else {
-        if (!user) return;
-        const newCar = await createCar(carPayload, user.id);
+        if (!token) return;
+        const newCar = await createCar(carPayload);
         addCarToState(newCar);
       }
       onSuccess();

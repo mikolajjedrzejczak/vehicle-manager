@@ -4,6 +4,7 @@ import type { Fueling } from '../../../types/garage.types';
 import Input from '../../ui/Input/Input';
 import Button from '../../ui/Button/Button';
 import { useFuelForm } from '../../../hooks/useFuelForm';
+import { useGarageStore } from '../../../store/garage.store';
 
 interface FuelFormProps {
   initialData?: Fueling | null;
@@ -26,6 +27,8 @@ export const FuelForm = ({
     handleSubmit,
   } = useFuelForm(initialData, onSuccess);
 
+  const selectedCar = useGarageStore((state) => state.getCurrentCar());
+
   return (
     <form onSubmit={handleSubmit} className={styles.form} noValidate>
       <div className={styles.form__grid}>
@@ -39,7 +42,9 @@ export const FuelForm = ({
           required
         />
         <Input
-          label="Stan licznika (km)"
+          label={`Stan licznika (km) > ${
+            selectedCar?.mileage.toLocaleString() ?? '---'
+          }`}
           name="mileage"
           type="number"
           value={formData.mileage}

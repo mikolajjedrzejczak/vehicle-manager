@@ -21,6 +21,7 @@ const FuelTab = () => {
     isLoading,
     isModalOpen,
     editingFueling,
+    canEdit,
     handleEdit,
     handleAddNew,
     handleDelete,
@@ -37,13 +38,15 @@ const FuelTab = () => {
             <Fuel className={styles.fuel__icon} size={24} />
             <h2 className={styles.fuel__title}>Historia tankowań</h2>
           </div>
-          <Button
-            variant="primary"
-            onClick={handleAddNew}
-            icon={<Plus size={18} />}
-          >
-            Dodaj
-          </Button>
+          {canEdit && (
+            <Button
+              variant="primary"
+              onClick={handleAddNew}
+              icon={<Plus size={18} />}
+            >
+              Dodaj
+            </Button>
+          )}
         </div>
 
         {isLoading ? (
@@ -58,32 +61,36 @@ const FuelTab = () => {
                     <th>PRZEBIEG</th>
                     <th>LITRY</th>
                     <th>KOSZT</th>
-                    <th className={styles.fuel__actionHeader}>AKCJE</th>
+                    {canEdit && (
+                      <th className={styles.fuel__actionHeader}>AKCJE</th>
+                    )}
                   </tr>
                 </thead>
                 <tbody>
                   {fuelings.map((item) => (
                     <tr key={item.id}>
-                      <td>{item.date}</td>
+                      <td>{item.date.split('T')[0]}</td>
                       <td>{item.mileage.toLocaleString()} km</td>
                       <td>{item.liters} L</td>
                       <td>{item.cost.toFixed(2)} zł</td>
-                      <td className={styles.fuel__actions}>
-                        <button
-                          aria-label="Edytuj tankowanie"
-                          className={styles.fuel__editBtn}
-                          onClick={() => handleEdit(item)}
-                        >
-                          <Pencil size={18} />
-                        </button>
-                        <button
-                          aria-label="Usuń tankowanie"
-                          className={styles.fuel__deleteBtn}
-                          onClick={() => handleDelete(item.id)}
-                        >
-                          <Trash2 size={18} />
-                        </button>
-                      </td>
+                      {canEdit && (
+                        <td className={styles.fuel__actions}>
+                          <button
+                            aria-label="Edytuj tankowanie"
+                            className={styles.fuel__editBtn}
+                            onClick={() => handleEdit(item)}
+                          >
+                            <Pencil size={18} />
+                          </button>
+                          <button
+                            aria-label="Usuń tankowanie"
+                            className={styles.fuel__deleteBtn}
+                            onClick={() => handleDelete(item.id)}
+                          >
+                            <Trash2 size={18} />
+                          </button>
+                        </td>
+                      )}
                     </tr>
                   ))}
                 </tbody>

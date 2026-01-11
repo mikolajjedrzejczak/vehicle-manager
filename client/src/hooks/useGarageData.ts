@@ -1,48 +1,33 @@
-import { useEffect } from 'react';
-import type { Car } from '../types/garage.types';
-import { createCar, fetchCars } from '../services/garage.service';
+import { useEffect, useCallback } from 'react';
+import { fetchCars } from '../services/garage.service';
 import { useGarageStore } from '../store/garage.store';
 import { useAuthStore } from '../store/auth.store';
 
 export const useGarageData = () => {
-  const { user } = useAuthStore();
-  const { setCars, setLoading, setError, addCarToState } = useGarageStore();
+  const token = useAuthStore((state) => state.token);
+  const setCars = useGarageStore((state) => state.setCars);
+  const setLoading = useGarageStore((state) => state.setLoading);
+  const setError = useGarageStore((state) => state.setError);
   const { cars, isLoading, error } = useGarageStore();
 
-  const loadData = async () => {
-    if (!user?.id) return;
+  const loadData = useCallback(async () => {
+    if (!token) return;
+
     try {
       setLoading(true);
-      const data = await fetchCars(user.id);
+      const data = await fetchCars();
       setCars(data);
     } catch (err: any) {
+      console.error("Błąd API:", err);
       setError('Nie udało się połączyć z API');
     } finally {
       setLoading(false);
     }
-  };
+  }, [token, setCars, setLoading, setError]);
 
   useEffect(() => {
     loadData();
-  }, []);
-
-  const addCar = async (
-    carData: Omit<Car, 'id' | 'fuelings'>,
-    onSuccess?: (newCar: Car) => void
-  ) => {
-    if (!user?.id) return;
-    try {
-      const newCarFromServer = await createCar(carData, user.id);
-      addCarToState(newCarFromServer);
-
-      if (onSuccess) {
-        onSuccess(newCarFromServer);
-      }
-    } catch (err) {
-      console.error('Błąd podczas dodawania auta:', err);
-      alert('Nie udało się dodać auta do bazy.');
-    }
-  };
+  }, [loadData]);
 
   return {
     cars,

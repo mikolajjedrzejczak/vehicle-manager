@@ -15,7 +15,7 @@ interface OilStatusResult {
 
 //  Oblicza status na podstawie daty
 //  Zwraca status 'danger' dla daty przeszłej i 'warning' dla < 30 dni.
-export const calculateDateStatus = (dateString?: string): DateStatusResult => {
+export const calculateDateStatus = (dateString?: string | null): DateStatusResult => {
   if (!dateString) {
     return { label: 'Brak', status: 'neutral', isExpired: false };
   }

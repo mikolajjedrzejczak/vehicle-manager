@@ -4,11 +4,12 @@ import { Fuel, Wrench, Car } from 'lucide-react';
 import { OverviewTab } from '../OverviewTab/OverviewTab';
 import FuelTab from '../FuelTab/FuelTab';
 import type { TabId } from '../../types/garage.types';
+import { CarStats } from '../CarStatsTab/CarStatsTab';
 
 const TAB_CONFIG = [
   { id: 'overview', label: 'Podgląd', icon: <Car size={20} /> },
   { id: 'fueling', label: 'Paliwo', icon: <Fuel size={20} /> },
-  { id: 'services', label: 'Serwis', icon: <Wrench size={20} /> },
+  { id: 'stats', label: 'Statystyki', icon: <Wrench size={20} /> },
 ] as const;
 
 const DashboardTabs = () => {
@@ -20,8 +21,8 @@ const DashboardTabs = () => {
         return <OverviewTab />;
       case 'fueling':
         return <FuelTab />;
-      case 'services':
-        return <div>Historia Serwisowa</div>;
+      case 'stats':
+        return <CarStats />;
       default:
         return <OverviewTab />;
     }

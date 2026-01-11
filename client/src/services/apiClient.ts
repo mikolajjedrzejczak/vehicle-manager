@@ -2,8 +2,7 @@ import axios from 'axios';
 import { useAuthStore } from '../store/auth.store';
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:3000',
-  withCredentials: true,
+  baseURL: '/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -12,7 +11,7 @@ const apiClient = axios.create({
 apiClient.interceptors.request.use(
   (config) => {
     const token = useAuthStore.getState().token;
-    
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -29,7 +28,9 @@ apiClient.interceptors.response.use(
       (error.response.status === 401 || error.response.status === 403)
     ) {
       useAuthStore.getState().logout();
-      window.location.href = '/login';
+      if (!window.location.pathname.includes('/login')) {
+        window.location.href = '/login';
+      }
     }
     return Promise.reject(error);
   }

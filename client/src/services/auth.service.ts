@@ -13,17 +13,13 @@ interface RegisterResponse {
 }
 
 export const registerRequest = (data: RegisterBody) => {
-  return apiClient.post<RegisterResponse>('/register', data);
+  return apiClient.post<RegisterResponse>('/auth/register', data);
 };
 
 export const loginRequest = (data: LoginBody) => {
-  return apiClient.post<LoginResponse>('/login', data);
+  return apiClient.post<LoginResponse>('/auth/login', data);
 };
 
 export const getMeRequest = () => {
-  return apiClient.get<User>('/me');
-};
-
-export const logoutRequest = () => {
-  return apiClient.post('/logout');
+  return apiClient.get<User>('/cars/me');
 };

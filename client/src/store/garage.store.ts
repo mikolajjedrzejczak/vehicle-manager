@@ -3,11 +3,10 @@ import { persist } from 'zustand/middleware';
 import type { Car, Fueling } from '../types/garage.types';
 import {
   createFueling,
-  removeFueling,
   fetchCars,
   updateFueling,
   getFuelingByCarId,
-  updateCar,
+  deleteFueling,
 } from '../services/garage.service';
 
 type FuelingCreateData = Omit<Fueling, 'id' | 'carId'>;
@@ -49,10 +48,10 @@ export const useGarageStore = create<GarageState>()(
       setLoading: (isLoading) => set({ isLoading }),
       setError: (error) => set({ error }),
 
-      fetchUserCars: async (userId) => {
+      fetchUserCars: async () => {
         set({ isLoading: true, error: null });
         try {
-          const cars = await fetchCars(userId);
+          const cars = await fetchCars();
           set({ cars, isLoading: false });
         } catch (err) {
           console.error(err);
@@ -106,49 +105,52 @@ export const useGarageStore = create<GarageState>()(
         const currentCar = cars.find((c) => c.id === currentCarId);
         if (!currentCar) return;
 
-        set({ isLoading: true });
+        set({ isLoading: true, error: null });
+
         try {
           const newFueling = await createFueling(currentCarId, fuelingData);
 
-          let updatedCar = { ...currentCar };
+          set((state) => {
+            const newMileage = Math.max(
+              Number(currentCar.mileage),
+              Number(fuelingData.mileage)
+            );
 
-          if (fuelingData.mileage > currentCar.mileage) {
-            await updateCar(currentCarId, {
-              mileage: fuelingData.mileage,
-            });
-
-            updatedCar.mileage = Number(fuelingData.mileage);
-          }
-
-          set((state) => ({
-            cars: state.cars.map((car) =>
-              car.id === currentCarId
-                ? {
-                    ...updatedCar,
-                    fuelings: [...(car.fuelings || []), newFueling],
-                  }
-                : car
-            ),
-            isLoading: false,
-          }));
+            return {
+              cars: state.cars.map((car) => {
+                if (car.id === currentCarId) {
+                  return {
+                    ...car,
+                  
+                    mileage: newMileage,
+                    fuelings: [newFueling, ...(car.fuelings || [])],
+                  };
+                }
+                return car;
+              }),
+              isLoading: false,
+            };
+          });
         } catch (err) {
           console.error('Store: Błąd dodawania tankowania', err);
           set({ isLoading: false, error: 'Nie udało się dodać tankowania' });
           throw err;
         }
       },
-
       updateFueling: async (fuelingId, data) => {
         const carId = get().currentCarId || get().cars[0]?.id;
         if (!carId) return;
 
         try {
-          const updated = await updateFueling(fuelingId, data);
+          const payload = { ...data, carId: Number(carId) };
+          const updated = await updateFueling(fuelingId, payload);
+
           set((state) => ({
             cars: state.cars.map((car) =>
               car.id === carId
                 ? {
                     ...car,
+                    mileage: Math.max(car.mileage, updated.mileage),
                     fuelings: (car.fuelings || []).map((f) =>
                       f.id === fuelingId ? updated : f
                     ),
@@ -167,7 +169,7 @@ export const useGarageStore = create<GarageState>()(
         if (!carId) return;
 
         try {
-          await removeFueling(fuelingId);
+          await deleteFueling(fuelingId);
 
           set((state) => ({
             cars: state.cars.map((car) =>

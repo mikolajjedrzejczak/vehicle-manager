@@ -1,10 +1,10 @@
-export type StatusType = 'ok' | 'warning' | 'critical' | '';
+export type StatusType = 'ok' | 'warning' | 'critical';
 export type PriorityType = 'high' | 'medium' | 'low';
 
 export interface ServiceEntry {
-  status: StatusType;
+  status?: StatusType;
   nextMileage?: number;
-  endDate?: string;
+  endDate?: string | null;
 }
 
 export interface CarServices {
@@ -26,6 +26,7 @@ export interface Fueling {
 
 export interface Car {
   id: number | string;
+  userId: string;
   registrationNumber: string;
   brand: string;
   model: string;
@@ -36,4 +37,20 @@ export interface Car {
   services: CarServices;
 }
 
-export type TabId = 'overview' | 'fueling' | 'services';
+export interface CreateCarData {
+  brand: string;
+  model: string;
+  registrationNumber: string;
+  year: number;
+  mileage: number;
+  vin: string;
+}
+
+export interface Stats {
+  totalCost: number;
+  totalLiters: number;
+  averagePricePerLiter: number;
+  fuelingsCount: number;
+}
+
+export type TabId = 'overview' | 'fueling' | 'stats';

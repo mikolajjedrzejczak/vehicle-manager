@@ -13,6 +13,7 @@ export const OverviewTab = () => {
     isEditModalOpen,
     setIsEditModalOpen,
     handleEditSuccess,
+    canEdit,
   } = useOverview();
 
   if (!currentCar) return null;
@@ -29,14 +30,16 @@ export const OverviewTab = () => {
             <CarFront className={styles.overview__icon} size={24} />
             <h2 className={styles.overview__title}>Informacje o pojeździe</h2>
           </div>
-          <button
-            className={styles.overview__editBtn}
-            onClick={() => setIsEditModalOpen(true)}
-            title="Edytuj dane"
-            aria-label="Edytuj dane pojazdu"
-          >
-            <Pencil size={18} />
-          </button>
+          {canEdit && (
+            <button
+              className={styles.overview__editBtn}
+              onClick={() => setIsEditModalOpen(true)}
+              title="Edytuj dane"
+              aria-label="Edytuj dane pojazdu"
+            >
+              <Pencil size={18} />
+            </button>
+          )}
         </div>
 
         <div className={styles.overview__detailsGrid}>
