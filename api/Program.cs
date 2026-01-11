@@ -1,24 +1,25 @@
 using api.Data;
 using api.Models;
+//using DotNetEnv;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using DotNetEnv;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
-Env.Load();
+//Env.Load();
 
-var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+//var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
 
-if (string.IsNullOrEmpty(connectionString))
-{
-    connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-}
+//if (string.IsNullOrEmpty(connectionString))
+//{
+//    connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//}
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString)); ;
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+//AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 builder.Services.AddAuthorization();
 

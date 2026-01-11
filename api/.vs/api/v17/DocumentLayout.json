@@ -7,6 +7,26 @@
       "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\models\\carservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:models\\carservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Migrations\\20260111162500_InitialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20260111162500_InitialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\controllers\\fuelingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:controllers\\fuelingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,20 +35,12 @@
       "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:controllers\\carscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\models\\fueling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:models\\fueling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\models\\currentyearrangeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:models\\currentyearrangeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\models\\carservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:models\\carservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\dtos\\cardtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:dtos\\cardtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|c:\\users\\mikje\\desktop\\vehicle-manager\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B6EB523D-8339-4417-9843-0111E5FE5634}|api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Migrations\\20260111111009_InitialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,33 +98,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CarDtos.cs",
-              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\DTOs\\CarDtos.cs",
-              "RelativeDocumentMoniker": "DTOs\\CarDtos.cs",
-              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\DTOs\\CarDtos.cs",
-              "RelativeToolTip": "DTOs\\CarDtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABKAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-11T16:27:18.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20260111162500_InitialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Migrations\\20260111162500_InitialMigration.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260111162500_InitialMigration.cs",
+              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Migrations\\20260111162500_InitialMigration.cs",
+              "RelativeToolTip": "Migrations\\20260111162500_InitialMigration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T23:20:03.01Z",
+              "WhenOpened": "2026-01-11T16:25:00.334Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "20260111111009_InitialMigration.cs",
-              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Migrations\\20260111111009_InitialMigration.cs",
-              "RelativeDocumentMoniker": "Migrations\\20260111111009_InitialMigration.cs",
-              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Migrations\\20260111111009_InitialMigration.cs",
-              "RelativeToolTip": "Migrations\\20260111111009_InitialMigration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T11:10:09.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "FuelingDtos.cs",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\DTOs\\FuelingDtos.cs",
               "RelativeDocumentMoniker": "DTOs\\FuelingDtos.cs",
@@ -129,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Car.cs",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\Car.cs",
               "RelativeDocumentMoniker": "Models\\Car.cs",
@@ -142,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "CarServices.cs",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\CarServices.cs",
               "RelativeDocumentMoniker": "Models\\CarServices.cs",
@@ -155,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "CurrentYearRangeAttribute.cs",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\CurrentYearRangeAttribute.cs",
               "RelativeDocumentMoniker": "Models\\CurrentYearRangeAttribute.cs",
@@ -172,16 +180,16 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAABMAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-10T13:41:23.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "CarsController.cs",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Controllers\\CarsController.cs",
               "RelativeDocumentMoniker": "Controllers\\CarsController.cs",
@@ -194,46 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
-              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\ApplicationUser.cs",
-              "RelativeToolTip": "Models\\ApplicationUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T12:35:00.697Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FuelingsController.cs",
-              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Controllers\\FuelingsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\FuelingsController.cs",
-              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Controllers\\FuelingsController.cs",
-              "RelativeToolTip": "Controllers\\FuelingsController.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T13:47:47.9Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Fueling.cs",
-              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\Fueling.cs",
-              "RelativeDocumentMoniker": "Models\\Fueling.cs",
-              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\Fueling.cs",
-              "RelativeToolTip": "Models\\Fueling.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T12:38:14.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": ".env",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\.env",
               "RelativeDocumentMoniker": ".env",
@@ -246,20 +215,83 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-01-10T13:15:20.533Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20260111111009_InitialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Migrations\\20260111111009_InitialMigration.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260111111009_InitialMigration.cs",
+              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Migrations\\20260111111009_InitialMigration.cs",
+              "RelativeToolTip": "Migrations\\20260111111009_InitialMigration.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T11:10:09.572Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "CarDtos.cs",
+              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\DTOs\\CarDtos.cs",
+              "RelativeDocumentMoniker": "DTOs\\CarDtos.cs",
+              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\DTOs\\CarDtos.cs",
+              "RelativeToolTip": "DTOs\\CarDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:20:03.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T12:35:00.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FuelingsController.cs",
+              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Controllers\\FuelingsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FuelingsController.cs",
+              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Controllers\\FuelingsController.cs",
+              "RelativeToolTip": "Controllers\\FuelingsController.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAIBJwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T13:47:47.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Fueling.cs",
+              "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\Fueling.cs",
+              "RelativeDocumentMoniker": "Models\\Fueling.cs",
+              "ToolTip": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Models\\Fueling.cs",
+              "RelativeToolTip": "Models\\Fueling.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T12:38:14.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
@@ -272,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "serviceDependencies.json",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Properties\\serviceDependencies.json",
               "RelativeDocumentMoniker": "Properties\\serviceDependencies.json",
@@ -285,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -298,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "20260110153304_InitialMigration.cs",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Migrations\\20260110153304_InitialMigration.cs",
               "RelativeDocumentMoniker": "Migrations\\20260110153304_InitialMigration.cs",
@@ -309,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "20260110233029_InitialMigration.cs",
               "DocumentMoniker": "C:\\Users\\mikje\\Desktop\\vehicle-manager\\api\\Migrations\\20260110233029_InitialMigration.cs",
               "RelativeDocumentMoniker": "Migrations\\20260110233029_InitialMigration.cs",
